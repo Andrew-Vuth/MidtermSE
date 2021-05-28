@@ -40,7 +40,7 @@
         } 
     %>
 
-    <div class="container m-3" style="border: 5px solid; margin-top: 10%;">
+    <div class="container m-3" style="border: 3px solid rgb(71, 213, 71); margin-top: 10%;">
       <h1>Thanks for feedback. Your query number is: <%= feedback_id %>  </h1>
     </div>
   </body>

@@ -13,7 +13,7 @@
     <title>Feedback form</title>
   </head>
   <body>
-    <div class="container" style="border: 5px solid; margin-top: 10%;">
+    <div class="container" style="border: 1px solid; margin-top: 10%; padding: 2em;">
       <form
         action="http://localhost:8080/midtermEx8/ThankYou.jsp"
         method="POST"
