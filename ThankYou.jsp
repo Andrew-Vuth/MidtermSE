@@ -18,11 +18,11 @@
   </head>
   <body>
     <% 
-        String feeback; 
+        String feedback; 
         String service; 
         feedback = request.getParameter("feedback"); 
         service = request.getParameter("service");
-        String feedback_id = Math.random() * 10 + service;
+        String feedback_id = (int) Math.floor(Math.random() * 10) +"@"+ service;
         Class.forName("org.sqlite.JDBC"); 
         String url ="jdbc:sqlite:D:/sqlite/db/feeback.db"; 
         String sql = "CREATE TABLE IF NOT EXISTS feedbacks (feedback_id text PRIMARY KEY, service text NOT NULL, feedback text NOT NULL)"; 
@@ -40,8 +40,8 @@
         } 
     %>
 
-    <div class="container">
-      <p>Thanks for feedback. Your query number is: <%= feedback_id %></p>
+    <div class="container m-3">
+      <h1>Thanks for feedback. Your query number is: <%= feedback_id %>  </h1>
     </div>
   </body>
 </html>
