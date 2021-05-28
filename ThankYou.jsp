@@ -1,6 +1,7 @@
-<%@ page contentType="text/html" pageEncoding="UTF-8"%> <%@ page
-import="java.sql.*" %> <%@ page import="org.sqlite.*" %> <%@ page
-import="java.util.*" %>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%> 
+<%@ page import="java.sql.*" %> 
+<%@ page import="org.sqlite.*" %> 
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
