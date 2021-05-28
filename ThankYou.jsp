@@ -16,20 +16,29 @@ import="java.util.*" %>
     />
   </head>
   <body>
-    <% String feeback; String service; feedback =
-    request.getParameter("feedback"); service = request.getParameter("service");
-    String feedback_id = Math.random() * 10 + service;
-    Class.forName("org.sqlite.JDBC"); String url =
-    "jdbc:sqlite:D:/sqlite/db/feeback.db"; String sql = "CREATE TABLE IF NOT
-    EXISTS feedbacks (feedback_id text PRIMARY KEY, service text NOT NULL,
-    feedback text NOT NULL)"; try{ Connection conn =
-    DriverManager.getConnection(url); Statement stmt = conn.createStatement();
-    stmt.execute(sql); String query = "insert into feedbacks(feedback_id,
-    service, feedback) value(?,?,?)"; PreparedStatement pstm =
-    conn.prepareStatement(query); pstm.setString(1, feedback_id);
-    pstm.setString(2, service); pstm.setString(3, feedback);
-    pstm.executeUpdate(); } catch (SQLException e) {
-    System.out.println(e.getMessage()); } %>
+    <% 
+        String feeback; 
+        String service; 
+        feedback = request.getParameter("feedback"); 
+        service = request.getParameter("service");
+        String feedback_id = Math.random() * 10 + service;
+        Class.forName("org.sqlite.JDBC"); 
+        String url ="jdbc:sqlite:D:/sqlite/db/feeback.db"; 
+        String sql = "CREATE TABLE IF NOT EXISTS feedbacks (feedback_id text PRIMARY KEY, service text NOT NULL, feedback text NOT NULL)"; 
+        
+        try{ 
+            Connection conn = DriverManager.getConnection(url); Statement stmt = conn.createStatement();
+            stmt.execute(sql); 
+            String query = "insert into feedbacks(feedback_id, service, feedback) value(?,?,?)"; 
+            PreparedStatement pstm = conn.prepareStatement(query); pstm.setString(1, feedback_id);
+            pstm.setString(2, service); 
+            pstm.setString(3, feedback);
+            pstm.executeUpdate(); 
+        }catch (SQLException e) {
+            System.out.println(e.getMessage()); 
+        } 
+    %>
+
     <div class="container">
       <p>Thanks for feedback. Your query number is: <%= feedback_id %></p>
     </div>
